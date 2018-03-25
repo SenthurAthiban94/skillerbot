@@ -31,7 +31,7 @@ mongoose.connection.on('connected',() => {
 //connect to router
 app.use('/',route);
 
-app.listen(3000,()=>{
+app.listen(process.env.PORT || 3000,()=>{
     console.log(__dirname);
     console.log("Server started at 3000");
 })
