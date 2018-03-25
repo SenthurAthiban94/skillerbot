@@ -1,0 +1,59 @@
+<link rel="stylesheet" type="text/css" href="/css/notifications.css"/>
+<div class="container">
+    <div class="notification static" id="static">
+        <h3 class="notification-title"></h3>
+        <p class="notification-message"></p>
+    </div>
+
+    <div class="notification success" id="success">
+        <span class="notification-close">&times;</span>
+        <h3 class="notification-title"></h3>
+        <p class="notification-message"></p>
+    </div>
+    
+    <div class="notification warning" id="warning">
+        <span class="notification-close">&times;</span>
+        <h3 class="notification-title"></h3>
+        <p class="notification-message"></p>
+    </div>
+    
+    <div class="notification info" id="info">
+        <span class="notification-close">&times;</span>
+        <h3 class="notification-title"></h3>
+        <p class="notification-message"></p>
+    </div>
+    
+    <div class="notification danger" id="danger">
+        <span class="notification-close">&times;</span>
+        <h3 class="notification-title"></h3>
+        <p class="notification-message"></p>
+    </div>
+</div>
+<script>
+    var static_set=false;
+    $('.notification-close').on('click', notificationClose);
+    function notificationClose() {
+        $('.static').show();    
+        $(this)
+        .parent('.notification')
+        .hide();
+    };
+    function showNotification(type,title,message,duration){
+        if(type=="static"){
+            static_set=true;
+        }
+        if(static_set){
+            $('.static').hide();
+        }
+        $('#'+type+' > .notification-title').text(title);
+        $('#'+type+' > .notification-message').text(message);
+        $('#'+type).show()
+        if(duration>0){
+            $('#'+type).delay(duration*1000).fadeOut(1000,function(){
+                if(static_set){
+                    $('.static').show();
+                }
+            });
+        }
+    }
+</script>

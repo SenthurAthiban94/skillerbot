@@ -1,0 +1,108 @@
+body{
+    padding-top:50px;
+    padding-bottom:50px;   
+}
+.navbar {
+    z-index: 9999;
+    background-color: black;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.7);
+}
+.navbar-brand{
+    margin-left: 0px !important;
+}
+#twoam {
+    width: 100vw;
+    height: 100vh;
+    background-image: url("http://2am.ninja/img/bruce_contact3.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-color: rgb(28, 28, 28);
+    color: white;
+}
+#nav-bar ul li:hover::after {
+    width: 100%;
+}
+
+#nav-bar ul li::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    background: #607D8B;
+    width: 0;
+    transition: width 0.2s;
+}
+
+#social-footer {
+    width: 100%;
+    text-align: center;
+    color: white;
+    background-color: black;
+    padding-bottom: 0px;
+}
+
+#social-footer ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+#social-footer ul li {
+    display: inline;
+    padding: 0.4em;
+}
+
+#social-footer a {
+    /*  color: #939393 !important; */
+    color: white !important;
+}
+
+.blacktext {
+    color: black;
+}
+
+footer {
+    width: 100vw;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    padding: 1% 5%;
+    text-align: center;
+    background-color: #000;
+    opacity: 1;
+    z-index: 100;
+    a {
+        font-weight: 500;
+        text-decoration: none;
+    }
+}
+
+
+a.fa {
+    text-decoration: none
+}
+
+a:link {
+    text-decoration: none !important;
+    outline: 0;
+}
+
+.fa-stack {
+    margin: -2px;
+}
+
+.copyright {
+    padding-bottom: 0px;
+    padding-top: 5px;
+    color: #555;
+}
+.highlight {
+    opacity: 0.6;
+}
+
+.highlight:hover {
+    opacity: 1;
+}

@@ -1,0 +1,18 @@
+
+To add all the files
+git add --all
+
+To commit 
+git commit -m "your message"
+
+Pull
+git pull origin master
+
+Push
+git push origin master
+
+git init
+
+git remote add origin https://github.com/vilvaathibanpb/SkillerBot.git
+
+git pull origin master

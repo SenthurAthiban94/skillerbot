@@ -1,0 +1,55 @@
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width">     
+    <title>Login</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/libs/animate.css" />
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" /> -->
+    <link rel="stylesheet" href="/css/font-awesome/css/font-awesome.min.css">
+
+    <!-- JS -->
+    <script src="/js/main.js" type="text/javascript"></script>
+</head>
+
+<body class="signup-body">
+
+    <%- include header.ejs %>
+
+    <h3 id="header-signin">SIGN IN USING</h3>
+    <div class="signup-section">
+        <a href="/auth/facebook">
+            <div>
+                <button class="social-btn" id="btn-fb">
+                    <i class="fa fa-facebook social-logo"></i>LOGIN WITH FACEBOOK</button>
+            </div>
+        </a>
+        <a href="/auth/linkedin">
+            <div>
+                <button class="social-btn" id="btn-ln">
+                    <i class="fa fa-linkedin social-logo"></i>LOGIN WITH LINKEDIN</button>
+            </div>
+        </a>
+        <a href="/auth/google">
+            <div>
+                <button class="social-btn" id="btn-gg">
+                    <i class="fa fa-google-plus social-logo"></i>LOGIN WITH GOOGLE PLUS</button>
+            </div>
+        </a>
+    </div>
+
+    <section id="menu" class="menu-section margin-top-10vh display-none">
+        <h1 class="menu-close" onclick="closeMenu()">X</h1>
+        <a href="/signup">
+            <h3 class="font-40 animated fadeInUp">Login</h3>
+        </a>
+        <h3 class="font-40 animated fadeInUp"></h3>
+        <h3 class="font-40 animated fadeInUp">About US</h3>
+        <h3 class="font-40 animated fadeInUp">About US</h3>
+    </section>
+
+</body>
+
+</html>
+<%- include footer.ejs %>

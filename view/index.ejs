@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width">        
+    <title>SkillerBot | Home</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/libs/animate.css" />
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" /> -->
+    <link rel="stylesheet" href="/css/font-awesome/css/font-awesome.min.css">    
+
+    <!-- JS -->
+    <script src="/js/main.js" type="text/javascript"></script>
+
+
+</head>
+
+<body style="padding:0px;">
+    <%- include header.ejs %>
+
+    <div class="content">
+        <section class="section signup" onmouseover="mouseOverSignUp()" onmouseout="mouseOutSignUp()">
+            <div class="width-75 signup-content">
+                <h2 class="font-40">Make your Resume/CV more Interactive</h2>
+                <br />
+                <h4 class="font-18 font-wt-400">A Bot acting as a Resume/CV is a one stop solution for 24*7 availability, peculiarity and attract Recruiters</h4>
+                <h4 class="font-18 font-wt-400">Never miss a Recruiter's call - Signup to build your Bot.</h4>
+                <br />
+                <br />
+                <div class="flex">
+                    <a href="/auth/facebook">
+                        <div class="social fb-m" id="facebook" style="display:none">
+                            <i class="fa fa-facebook" ></i>
+                        </div>
+                    </a>
+                    <a href="/auth/google">
+                        <div class="social gg-m" id="google">
+                            <i class="fa fa-google-plus"></i>
+                        </div>
+                    </a>
+                    <a href="/auth/linkedin">
+                        <div class="social ln-m" id="linkedin">
+                            <i class="fa fa-linkedin"></i>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="overlay-div1 display-none m-display-none" id="overlay1"></div>
+            <img src="/assets/img/robot.png" class="signup-bg-img display-none m-display-none" id="signupImg"/>
+        </section>
+
+        <section class="section description" onmouseover="mouseOverDescription()">
+            <div class="width-75 desc-content">
+                <h1 class="font-40 margin-bottom-0">SKILLER BOT</h1>
+                <h3 class="font-24">The Modern CV</h3>
+                <h4 class="font-18 font-wt-400">Transform your Traditional Monotonous Resume/CV into Interactive CHATBOT with Skiller Bot</h4>                
+                <h4 class="font-18 font-wt-400">Bring your BOT to life in 3 simple steps</h4>     
+                <p class="font-18 "><i class="fa fa-user-plus enroll-steps"></i> Signup with SkillerBot</p>           
+                <p class="font-18 "><i class="fa fa-hand-pointer-o enroll-steps"></i> Choose your profile</p>           
+                <p class="font-18 "><i class="fa fa-pencil enroll-steps"></i> Build your BOT</p>           
+                <p class="font-18 "><i class="fa fa-thumbs-o-up enroll-steps"></i> You are done</p>           
+            </div>
+            <div class="overlay-div2 display-none m-display-none" id="overlay2"></div>            
+            <img src="/assets/img/desc.png" class="desc-bg-img display-none m-display-none" id="descImg"/>   
+        </section>
+
+        <section class="section customize" id="customize" onmouseover="mouseOverCustomise()" onmouseout="mouseOutCustomise()">
+            <div class="width-75 customize-content">
+                <h2 class="font-40">For Customized Personal Bot,</h2>
+                <h4 class="font-24 font-wt-400">Please get in touch:</h4>
+                <form>
+                    <input type="text" class="input-width" placeholder="Your Name ..." required><br>
+                    <input type="email" class="input-width" placeholder="Your Email ..." required><br>
+                    <input type="tel" class="input-width" placeholder="Mobile Number ..." required><br>
+                    <button type="submit" class="submit-btn">Submit</button>
+                </form>
+            </div>
+            <div class="overlay-div3 display-none m-display-none"  id="overlay3"></div>            
+            <img src="/assets/img/contact_intro.png" class="contact-bg-img display-none m-display-none" id="contactUsImg"/>            
+        </section>
+
+        <%- include footer.ejs %>
+    </div>
+
+</body>
+
+</html>

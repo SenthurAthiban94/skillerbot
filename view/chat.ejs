@@ -1,0 +1,57 @@
+<html>
+    <head>
+            <meta name="viewport" content="width=device-width">
+            <!-- vFg567Ewdh , 5a59d76e734d1d347182cc75 -->
+        <title>Chatbot</title>
+        <link rel="stylesheet" href="/css/chat.css">
+        <link rel="stylesheet" href="/css/animate.css">
+        <link rel="stylesheet" href="/css/font-awesome/css/font-awesome.min.css">
+    </head>
+    <body>
+
+        <div class="header">
+            <h1 style="margin-bottom: 0px; font-size: 22px; text-align:center;"> <%= data.user_name %>  - Resume/CV Bot</h1>
+            <h3 style="margin-top: 5px; font-size: 14px; text-align:center;"> <%= data.role %> </h3>
+        </div>
+        
+        <div class="container">
+            <div class="placeholder-details display-none"></div>
+
+            <div class="details display-none">
+                <img src=<%=  data.image_path  %>  class="profile-img" />
+                <h1 style="font-size:18px; font-weight:400; margin-top: 50px;"> <%= data.user_name %> </h1>
+                <h1 style="display:none;" id="user-id"><%= data._id %></h1>
+                <h1 style="display:none;" id="image"><%= data.image_path %></h1>
+                <h1 style="font-size:16px; font-weight:400;"> <%= data.role %></h1>
+                <h1 style="font-size:16px; font-weight:400;"> <%= data.email_id %></h1>
+                <h1 style="font-size:16px; font-weight:400;"> <%= data.mobile %></h1>
+                <!-- <h1 style="font-size:14px; font-weight:400; word-wrap:break-word; padding: 5px 50px"> Summary: djkfbvdjbvjdnvjksdnjksdvnjsdvnjsdvndvndjsvnsjdnvkjsdnvjdsnvjsnvjskvnsv </h1> -->
+                <h1 style="font-size:18px; font-weight:400; margin-top:50px"> <i class="fa fa-linkedin"></i> <i class="fa fa-google-plus"></i> <i class="fa fa-facebook"></i> <i class="fa fa-github"></i></h1>
+            </div>
+
+            <div class="chatbox" id="chatbox">
+                <div id="msgarea">
+                    <div style="background: #fff; display:flex; ">
+                            <img src=<%=  data.image_path  %>  class="mini-dp" />
+                            <h4 class="chat-bubble bot" style="font-weight: 400;"> Hello, I am a interactive Resume of <%= data.user_name %>. How may I help you </h4>
+                    </div>
+                </div>
+                <div style="background: #fff;" id="typing" class="display-none-type">
+                        <img src=<%=  data.image_path  %>  class="mini-dp" />
+                        <img src="/assets/img/typing.gif" class="mini-dp" />
+                </div>
+            </div>
+
+        </div>
+
+        <div class="type-area">
+            <input type="text" id="input" class="msgbox" placeholder="Write your message here..." />
+            <button class="send-btn" onclick="addHrMsg()">Send</button>
+        </div>
+
+        <script src="/js/chat.js"></script>
+        
+            
+
+    </body>
+</html>
