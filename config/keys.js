@@ -8,8 +8,8 @@ module.exports = {
         dbURL:'mongodb://mongodb:test@ds161346.mlab.com:61346/linkedin-data'
     },
     google:{
-        clientID:'948827112863-vjiorbjlmbpce0585huhv3ofnrg9upf5.apps.googleusercontent.com',                
-        clientSecret:'i71HgsRpM36-euzVj4WdYknR'
+        clientID:'948827112863-q01l99bqnqb05ia7pig2038a080vne5g.apps.googleusercontent.com',                
+        clientSecret:'ASIKiRTjswAv__xuHTmbsYqb'
     },
     linkedIn:{
         clientID:'81osj02dqytkh8',
