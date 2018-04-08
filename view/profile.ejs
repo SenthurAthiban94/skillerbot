@@ -429,11 +429,18 @@ function getMaxDate(){
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///  GOOGLE MAP Address Fetching API
     function getAutoCompleteAddress(input) {
-        new google.maps.places.Autocomplete(input);
+        var autocomplete=new google.maps.places.Autocomplete(input);
         google.maps.event.addDomListener(input, 'keydown', function(event) { 
             if (event.keyCode === 13) { 
                 event.preventDefault(); 
             }
+        }); 
+        google.maps.event.addDomListener(autocomplete, 'place_changed', function(event) { 
+            var place = autocomplete.getPlace();
+            answers[input.name]={
+                                    "lat" : place.geometry.location.lat(),
+                                    "lng" : place.geometry.location.lng()
+                                };
         }); 
     }
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
