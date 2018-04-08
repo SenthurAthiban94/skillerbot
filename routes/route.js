@@ -98,7 +98,6 @@ route.post('/profile/getQuestions', (req, res) => {
                         intentCollection.findOne({}, function (err, docs) {
                             if (!err) {
                                 var counter = 0;
-                                //Array of response from user from Questionnaire page
                                 userResponse = JSON.parse(req.body.question_response);
                                 for (var key_val in docs.questions_Array[0]) {
                                     responseObject[key_val] = userResponse[counter];
