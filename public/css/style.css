@@ -210,12 +210,11 @@ a{
 
 .social{
     padding: 15px;
-    width: 70px;
+    width: 100%;
     text-align: center;
     font-size: 25px;
     border: 1px solid #000;
-    border-radius: 50%;
-    margin-right: 15px;
+    margin: 10px;
     color: #000;
 }
 .fb{

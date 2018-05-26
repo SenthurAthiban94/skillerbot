@@ -1,7 +1,7 @@
 // SignUp section
 
 var mouseOverSignUp = function(){
-    document.getElementById("facebook").classList.add("fb");
+    // document.getElementById("facebook").classList.add("fb");
     document.getElementById("google").classList.add("gg");
     document.getElementById("linkedin").classList.add("ln");
     document.getElementById("signupImg").classList.remove("display-none");
@@ -15,9 +15,9 @@ var mouseOverSignUp = function(){
 }
 
 var mouseOutSignUp = function(){
-    document.getElementById("facebook").classList.remove("fb");
-    document.getElementById("google").classList.remove("gg");
-    document.getElementById("linkedin").classList.remove("ln");   
+    // document.getElementById("facebook").classList.remove("fb");
+    // document.getElementById("google").classList.remove("gg");
+    // document.getElementById("linkedin").classList.remove("ln");   
     document.getElementById("signupImg").classList.remove("animate-signup-image-in");
     document.getElementById("signupImg").classList.remove("animate-signup-image-out");
     document.getElementById("overlay2").classList.add("display-none");        
