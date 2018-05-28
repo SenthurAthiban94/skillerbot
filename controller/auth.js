@@ -1,6 +1,7 @@
 const passport = require("passport");
 const userProfile = require('../models/user-model');
 const fresherQuestion = require('../models/fresher-Questions');
+const userRoles = require('../models/user-roles');
 
 //Scope page for google +
 exports.googleplusScope = passport.authenticate('google',{
@@ -21,10 +22,12 @@ exports.facebookScope = passport.authenticate('facebook',{
 exports.googleplusAuth = (req, res) => {
     userProfile.findOne({'email_id': req.user.email_id}).then((data)=>{
         if (req.user.account_status){
-            res.redirect("/bot/"+req.user.url_code);
+            // res.redirect("/bot/"+req.user.url_code);
+            res.redirect("/profileHome/"+req.user._id);
         }
         else{
             res.redirect("/auth/google/profile?_id="+ req.user._id);
+            // res.redirect("/auth/google/getRole?_id="+ req.user._id);
         }
     }).catch((err)=>{
         res.status(404).redirect('/auth/google');
@@ -63,19 +66,26 @@ exports.facebookAuth = (req, res) => {
 exports.profile = (req, res) => {
     let parsedata={};
     userProfile.findOne({"_id": req.query._id}).then((data)=>{
-        fresherQuestion.findOne({}).then((docs) => {
-            questions=[];
-            for (var key_val in docs.questions_Array[0]) {
-                questions = docs.questions_Array[0];
-            }
-            data['questions']=questions;
-            res.render("../view/profile", {
-                "data": data,
-                "questions" : questions
+        userRoles.findOne({"id":'Role'}).then((data)=>{
+            res.render("../view/getRole", {                         //profile
+                "data": data
             });
-        }).catch((err)=>{
-            res.status(404).redirect('/');
         });
+
+        // fresherQuestion.findOne({}).then((docs) => {
+        //     console.log(JSON.stringify(docs));
+        //     questions=[];
+        //     for (var key_val in docs.questions_Array[0]) {
+        //         questions = docs.questions_Array[0];
+        //     }
+        //     data['questions']=questions;
+        //     res.render("../view/getRole", {                         //profile
+        //         "data": data,
+        //         "questions" : questions
+        //     });
+        // }).catch((err)=>{
+        //     res.status(404).redirect('/');
+        // });
     }).catch((err)=>{
         res.status(404).redirect('/');
     });    

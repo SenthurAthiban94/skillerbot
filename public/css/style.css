@@ -72,6 +72,8 @@ a{
     min-height: 100vh;
     border-right: 1px solid rgba(0, 0, 0, 0.1);
 }
+
+
 @media (max-width: 768px){
     .content{
         display: block;
@@ -233,7 +235,6 @@ a{
 /* ******************************************************************************* */
 /* GENERAL */
 /* ******************************************************************************* */
-
 .flex{
     display: flex;
 }
@@ -487,12 +488,12 @@ a{
 }
 
 .signup-body {
-    background-color: #663399;
+    background-color: #f7f1e3;
     outline: none!important;
 }
 
 #header-signin {
-    color: #fff;
+    color: #000;
     text-align: center;
     margin-top: 20vh;
     font-size: 40px;

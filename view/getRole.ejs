@@ -1,0 +1,38 @@
+<%- include header.ejs %>
+<%- include notifications.ejs %>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="/css/main.css" />
+        <link href="https://fonts.googleapis.com/css?family=Oswald|Slabo+27px" rel="stylesheet">    
+        <link rel="stylesheet" href="/css/getroles.css"/>
+    </head>
+    <body>
+        <div class="form-container">
+            <h1 class="role">Please Select your Designation</h1>
+            <ul class="role-list">
+                <% for(var i=0;i<data.options.length;i++) { %>
+                <li>
+                    <label class='radio-container not-allowed'>
+                        <input type="<%=data.type%>" name="<%=data.id%>" value="<%=data.options[i]['value']%>" <%= (i==0) ? 'checked' : 'disabled'%>  />
+                        <%=data.options[i]["name"]%> 
+                        <% if(i!=0) {%> 
+                        <span><i>Coming soon</i></span>
+                        <% } %>
+                        <span class='checkmark'></span>
+                    </label>
+                </li> 
+                <%} %>
+            </ul>
+            <div class="text-center">
+                <button type="submit" onclick="proceed()" class="btn-proceed"> Proceed </button>
+            </div>
+        </div>
+        <script>
+            function proceed(){
+                var selected_role=$('input[name="<%=data.id%>"]:checked').val();
+                alert(selected_role);
+            }
+        </script>
+    </body>
+</html>

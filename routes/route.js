@@ -2,11 +2,13 @@ const express = require("express");
 const route = express.Router();
 const auth = require("../controller/auth");
 const login = require("../controller/login");
+const profile = require("../controller/profile");
 const chat = require("../controller/chat");
 const passport = require("passport");
 const userProfile = require('../models/user-model');
 const fresherQuestion = require('../models/fresher-Questions');
 const fresherProfile = require('../models/fresher-model');
+const userRoles=require('../models/user-roles');
 
 
 route.get('/', (req, res) => {
@@ -24,6 +26,7 @@ route.get('/view/success', (req, res) => {
     }
 });
 
+route.get('/profileHome/:profileId',profile.home);
 route.get('/bot/:code', chat.startChat);
 route.get('/findIntent', chat.chatIntent);
 route.get('/findAnswer', chat.chatResponse);
@@ -45,7 +48,7 @@ route.get('/auth/linkedin/redirect', passport.authenticate('linkedin', { failure
 //Login Page
 route.get('/signup', login.loginPage);
 
-route.get('/auth/google/profile', auth.profile);
+route.get('/auth/google/profile', auth.profile); 
 route.get('/auth/facebook/profile', auth.profile);
 route.get('/auth/linkedin/profile', auth.profile);
 

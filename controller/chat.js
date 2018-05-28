@@ -1,5 +1,6 @@
 const userProfile = require('../models/user-model');
 const fresherDetail = require('../models/fresher-model');
+const userRoles = require('../models/user-roles');
 
 const fresherProjectId = 'newagent-33ad4'; 
 var apiai = require('apiai');

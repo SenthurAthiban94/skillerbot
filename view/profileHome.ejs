@@ -1,0 +1,50 @@
+<%- include header.ejs %>
+<%- include notifications.ejs %>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="/css/port.css" />
+        <link href="https://fonts.googleapis.com/css?family=Oswald|Slabo+27px" rel="stylesheet">    
+        <link rel="stylesheet" href="/css/social-btns.css"/>
+    </head>
+    <body>
+        <div class="profile-container">
+            <img class="dp" src="<%=data.image_path%>" alt="Display Picture" />
+            <h2 class="name"><%= data.user_name%></h2>
+            <h3 class="title"><%= (data.role).toUpperCase();%></h3>
+            <h2 class="name">Resume Bot Link</h2>
+            <h2 class="name">
+                <a href="./../bot/<%=data.url_code%>" target="_blank">http://skillerbot.herokuapp.com/bot/<%=data.url_code%></a>
+            </h2>
+            <div class="text-center">
+                <button type="submit" onclick="proceed()" class="btn-proceed"> Edit your Answers </button>
+            </div>
+            <div class="social-container">
+                <h3 class="title">Share with</h3>
+                <div class="social">
+                    <a class="social-icon" data-tooltip="email@gmail.com" href="mailto:email@gmail.com">
+                        <i class="fa fa-envelope" aria-hidden="true"></i>
+                    </a>
+                    <a class="social-icon" data-tooltip="GitHub" href="https://github.com/puikinsh">
+                        <i class="fa fa-github" aria-hidden="true"></i>
+                    </a>
+                    <a class="social-icon" data-tooltip="LinkedIn" href="https://www.linkedin.com/company/colorlib">
+                        <i class="fa fa-linkedin" aria-hidden="true"></i>
+                    </a>
+                    <a class="social-icon" data-tooltip="Twitter" href="https://twitter.com/colorlib">
+                        <i class="fa fa-twitter" aria-hidden="true"></i>
+                    </a>
+                    <a class="social-icon" data-tooltip="Facebook" href="https://www.facebook.com/colorlib">
+                        <i class="fa fa-facebook" aria-hidden="true"></i>
+                    </a>
+                    <a class="social-icon" data-tooltip="YouTube" href="https://www.youtube.com/c/Colorlib">
+                        <i class="fa fa-youtube" aria-hidden="true"></i>
+                    </a>
+                    <a class="social-icon" data-tooltip="Instagram" href="https://instagram.com/Colorlib">
+                        <i class="fa fa-instagram" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

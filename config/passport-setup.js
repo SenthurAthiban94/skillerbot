@@ -57,7 +57,10 @@ passport.use(
         (accessToken, refreshToken, profile, done) => {
             userProfile.findOne({ email_id: profile.emails[0].value }).then((currentUser) => {
                 if (currentUser) {
-                    done(null, currentUser);
+                    currentUser.image_path=profile.photos[0].value;
+                    currentUser.save().then((updatedUser)=>{
+                        done(null, updatedUser);
+                    });
                 }
                 else {
                     new userProfile({
@@ -67,7 +70,6 @@ passport.use(
                         account_status: false,
                         role : "undefined",
                         profile_url: profile._json.url
-
                     }).save().then((newUser) => {
                         done(null, newUser);
                     });
