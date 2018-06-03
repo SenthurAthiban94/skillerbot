@@ -1,0 +1,34 @@
+{
+    "_id": {
+        "$oid": "5ab7c5c5e9b39d0c480618f3"
+    },
+    "questions_Array": [
+        {
+            "UserName": "senthur athiban",
+            "TellAboutYourself": "Hello",
+            "BasicQuestion_Objective": "how ",
+            "BasicQuestion_CurrentLocation": "Bengaluru, Karnataka, India",
+            "BasicQuestion_DOB": "2018-03-13",
+            "BasicQuestion_10thPercentage": "10",
+            "BasicQuestion_12thPercentage": "20",
+            "BasicQuestion_CollegeDegree": "cs",
+            "BasicQuestion_CollegePercentage": "10",
+            "BasicQuestion_Project": "SkillerBot",
+            "BasicQuestion_Certification": "msc software engineering",
+            "BasicQuestion_Internship": "lasdfja",
+            "BasicQuestion_Skillset": [
+                "angular",
+                "design",
+                "react"
+            ],
+            "BasicQuestion_AreaOfInterest": "web",
+            "BasicQuestion_Pros": "pros\n\nand \n\ncons",
+            "BasicQuestion_ExtraCurricular": "okay",
+            "BasicQuestion_PhoneNumber": "9234242342",
+            "BasicQuestion_Linkedin": "linkedin.com",
+            "BasicQuestion_Github": "github.com"
+        }
+    ],
+    "user_id": "5ab7c539e9b39d0c480618f2",
+    "__v": 0
+}

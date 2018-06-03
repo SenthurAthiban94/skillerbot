@@ -1,0 +1,255 @@
+{
+    "_id": {
+        "$oid": "5a599f7a734d1d347182bcf5"
+    },
+    "questions_Array": [
+        {
+            "UserName": {
+                "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSB4VBlhkcJ0u2IbiCV7xGAfqMk6iC-DBSq2QOFXmar3TVTCQVh",
+                "q": "How may we call you.?",
+                "type": "text",
+                "placeholder": "Your Name"
+            },
+            "BasicQuestion_Objective": {
+                "image_url": "https://download.unsplash.com/photo-1428279148693-1cf2163ed67d",
+                "q": "Your career objective.",
+                "type": "textarea",
+                "placeholder": "Give a short description of your career objective"
+            },
+            "BasicQuestion_CurrentLocation": {
+                "image_url": "https://download.unsplash.com/photo-1429041966141-44d228a42775",
+                "q": "Where do you stay currently.?",
+                "type": "text",
+                "placeholder": "Address",
+                "name": "geo_address"
+            },
+            "BasicQuestion_PassOutYear": {
+                "image_url": "https://download.unsplash.com/photo-1428279148693-1cf2163ed67d",
+                "q": "When did you graduate?",
+                "type": "date",
+                "placeholder": "DD/MM/YYYY"
+            },
+            "BasicQuestion_InstitutionName": {
+                "image_url": "https://download.unsplash.com/photo-1429041966141-44d228a42775",
+                "q": "What is your college name?",
+                "type": "text",
+                "placeholder": "Your College Name"
+            },
+            "BasicQuestion_CollegeDegree": {
+                "image_url": "https://download.unsplash.com/photo-1428279148693-1cf2163ed67d",
+                "q": "Degree and specialization in graduation.",
+                "type": "text",
+                "placeholder": "Degree and Specialization"
+            },
+            "BasicQuestion_CollegePercentage": {
+                "image_url": "https://download.unsplash.com/photo-1429041966141-44d228a42775",
+                "q": "Percentile in your graduation.",
+                "type": "number",
+                "placeholder": "Percentage (%)"
+            },
+            "BasicQuestion_Skillset": {
+                "name": "Skills",
+                "image_url": "https://download.unsplash.com/photo-1428279148693-1cf2163ed67d",
+                "q": "Define your skillset.",
+                "type": "multiselect",
+                "options": [
+                    {
+                        "name": "Angular JS",
+                        "value": "Angular JS"
+                    },
+                    {
+                        "name": "AWS",
+                        "value": "AWS"
+                    },
+                    {
+                        "name": "C",
+                        "value": "C"
+                    },
+                    {
+                        "name": "CSS",
+                        "value": "CSS"
+                    },
+                    {
+                        "name": "C++",
+                        "value": "C++"
+                    },
+                    {
+                        "name": "C#",
+                        "value": "C#"
+                    },
+                    {
+                        "name": "Design",
+                        "value": "Design"
+                    },
+                    {
+                        "name": "Data Structures",
+                        "value": "Data Structures"
+                    },
+                    {
+                        "name": "Dot Net",
+                        "value": "Dot Net"
+                    },
+                    {
+                        "name": "Ember JS",
+                        "value": "Ember JS"
+                    },
+                    {
+                        "name": "HTML",
+                        "value": "HTML"
+                    },
+                    {
+                        "name": "Java",
+                        "value": "Java"
+                    },
+                    {
+                        "name": "Javascript",
+                        "value": "Javascript"
+                    },
+                    {
+                        "name": "Node JS",
+                        "value": "Node JS"
+                    },
+                    {
+                        "name": "Oracle SQL",
+                        "value": "Oracle SQL"
+                    },
+                    {
+                        "name": "Python",
+                        "value": "Python"
+                    },
+                    {
+                        "name": "PHP",
+                        "value": "PHP"
+                    },
+                    {
+                        "name": "R Language",
+                        "value": "R Language"
+                    },
+                    {
+                        "name": "React JS",
+                        "value": "React JS"
+                    },
+                    {
+                        "name": "Ruby",
+                        "value": "Ruby"
+                    },
+                    {
+                        "name": "Swift",
+                        "value": "Swift"
+                    },
+                    {
+                        "name": "SQL",
+                        "value": "SQL"
+                    },
+                    {
+                        "name": "Three JS",
+                        "value": "Three JS"
+                    }
+                ]
+            },
+            "BasicQuestion_AreaOfInterest": {
+                "name": "AreaOfInterest",
+                "image_url": "https://download.unsplash.com/photo-1429041966141-44d228a42775",
+                "q": "Your area of interest.",
+                "type": "select",
+                "options": [
+                    {
+                        "name": "Android Development",
+                        "value": "Android Development"
+                    },
+                    {
+                        "name": "Artificial Intelligence",
+                        "value": "Artificial Intelligence"
+                    },
+                    {
+                        "name": "Big Data and Hadoop",
+                        "value": "Big Data and Hadoop"
+                    },
+                    {
+                        "name": "Back-End Development",
+                        "value": "Back-End Development"
+                    },
+                    {
+                        "name": "Cloud Computing",
+                        "value": "Cloud Computing"
+                    },
+                    {
+                        "name": "Data Science",
+                        "value": "Data Science"
+                    },
+                    {
+                        "name": "DevOps",
+                        "value": "DevOps"
+                    },
+                    {
+                        "name": "Digital Marketing",
+                        "value": "Digital Marketing"
+                    },
+                    {
+                        "name": "ETL Development",
+                        "value": "ETL Development"
+                    },
+                    {
+                        "name": "Front-End Development",
+                        "value": "Front-End Development"
+                    },
+                    {
+                        "name": "IOS Development",
+                        "value": "IOS Development"
+                    },
+                    {
+                        "name": "Machine Learning",
+                        "value": "Machine Learning"
+                    },
+                    {
+                        "name": "Networking",
+                        "value": "Networking"
+                    },
+                    {
+                        "name": "SAP Developer",
+                        "value": "SAP Developer"
+                    },
+                    {
+                        "name": "SAS Developer",
+                        "value": "SAS Developer"
+                    },
+                    {
+                        "name": "Software Testing",
+                        "value": "Software Testing"
+                    },
+                    {
+                        "name": "Security Testing",
+                        "value": "Security Testing"
+                    },
+                    {
+                        "name": "Web Designer",
+                        "value": "Web Designer"
+                    },
+                    {
+                        "name": "Web Development",
+                        "value": "Web Development"
+                    }
+                ]
+            },
+            "BasicQuestion_PhoneNumber": {
+                "image_url": "https://download.unsplash.com/photo-1428279148693-1cf2163ed67d",
+                "q": "Mobile number.. A way to contact you.",
+                "type": "number",
+                "placeholder": "Contact Number",
+                "max": 9999999999
+            },
+            "BasicQuestion_Linkedin": {
+                "image_url": "https://download.unsplash.com/photo-1429041966141-44d228a42775",
+                "q": "Provide your Linkedin profile link.",
+                "type": "text",
+                "placeholder": "LinkedIn Profile Link"
+            },
+            "BasicQuestion_Github": {
+                "image_url": "https://download.unsplash.com/photo-1428279148693-1cf2163ed67d",
+                "q": "Do you have a Github profile.? If so please share the link.",
+                "type": "text",
+                "placeholder": "Github Profile Link"
+            }
+        }
+    ]
+}

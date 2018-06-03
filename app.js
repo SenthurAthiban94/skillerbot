@@ -1,12 +1,14 @@
-const express = require("express");
-const mongoose = require("mongoose");
-const keys = require("./config/keys");
-const route = require("./routes/route");
-const path = require("path");
-const bodyParser = require("body-parser");
-const passport = require("passport");
-const passportSetup = require('./config/passport-setup');
-
+const express = require("express"),
+    mongoose = require("mongoose"),
+    keys = require("./config/keys"),
+    route = require("./routes/route"),
+    path = require("path"),
+    bodyParser = require("body-parser"),
+    passport = require("passport"),
+    passportSetup = require('./config/passport-setup'),
+    cookieParser = require('cookie-parser'),
+    cookieSession = require('cookie-session');
+    
 const app = express();
 const port = 3000;
 
@@ -27,6 +29,13 @@ mongoose.connect(keys.mongodb.dbURL);
 mongoose.connection.on('connected',() => {
     console.log("Connected to MongoDB");
 });
+
+//Middleware
+app.use(cookieSession({
+    name: 'session',
+    keys: ['123']
+}));
+app.use(cookieParser());
 
 //connect to router
 app.use('/',route);

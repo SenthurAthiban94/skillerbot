@@ -21,6 +21,7 @@ var mouseOutSignUp = function(){
     document.getElementById("signupImg").classList.remove("animate-signup-image-in");
     document.getElementById("signupImg").classList.remove("animate-signup-image-out");
     document.getElementById("overlay2").classList.add("display-none");        
+    document.getElementById("signupImg").classList.add("display-none");
     return; 
 }
 
@@ -42,19 +43,21 @@ var mouseOverCustomise = function(){
     document.getElementById("contactUsImg").classList.add("animate-contact-image-in");
     document.getElementById("signupImg").classList.add("display-none");
     document.getElementById("overlay2").classList.remove("display-none");
-    
+    document.querySelector(".customize-content").style.background="#1b1c1d94";
     return;
 }
 
 var mouseOutCustomise = function(){
     document.getElementById("contactUsImg").classList.remove("animate-contact-image-out");
     document.getElementById("contactUsImg").classList.remove("animate-contact-image-in");
-    document.getElementById("overlay2").classList.add("display-none");    
+    document.getElementById("overlay2").classList.add("display-none"); 
+    document.getElementById("contactUsImg").classList.add("display-none");
+    document.querySelector(".customize-content").style.background=null;
     return; 
 }
 
 var shrinkMenu = function(){
-    console.log("shrink")
+    // console.log("shrink")
     // document.getElementById("contactUsImg").classList.add("display-none"); 
     if (document.getElementById("overlay2")) 
         document.getElementById("overlay2").classList.remove("display-none");  

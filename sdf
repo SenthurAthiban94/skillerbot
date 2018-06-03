@@ -1,0 +1,13 @@
+<% if(typeof data !== 'undefined'){%>
+    if (!localStorage.getItem("profile")) {
+        localStorage.setItem("profile",JSON.stringify({"_id":'<%=data._id%>',"user_name":'<%=data.user_name%>',"email_id":'<%=data.email_id%>',"image_path":'<%=data.image_path%>',"account_status":'<%=data.account_status%>',"role":'<%=data.role%>',"profile_url":'<%=data.profile_url%>',"url_code":'<%=data.url_code%>'}));
+    }
+<%}else{%>
+    if (location.pathname!=="/" && !localStorage.getItem("profile")) {
+        window.location.href="/";
+    }
+    var existing_user=localStorage.getItem("profile");
+    if (existing_user && Object.keys(JSON.parse(existing_user)).length ){
+        window.location.href="http://localhost:3000/profileHome/"+JSON.parse(existing_user)._id;
+    }
+<%}%>

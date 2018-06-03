@@ -1,7 +1,8 @@
 const passport = require("passport");
-const userProfile = require('../models/user-model');
-const fresherQuestion = require('../models/fresher-Questions');
-const userRoles = require('../models/user-roles');
+const database=require("../config/database");
+const userProfile = database.userprofiles_db;                   //require('../models/user-model');
+const fresherQuestion = database.fresher_questions_db;          //require('../models/fresher-Questions');
+const userRoles = database.roles_db;                            //require('../models/user-roles');
 
 //Scope page for google +
 exports.googleplusScope = passport.authenticate('google',{
@@ -20,10 +21,12 @@ exports.facebookScope = passport.authenticate('facebook',{
 
 //Google plus authentication API
 exports.googleplusAuth = (req, res) => {
+    req.session.token = req.user.accessToken;
+    req.session.hashid=req.user._id;
     userProfile.findOne({'email_id': req.user.email_id}).then((data)=>{
-        if (req.user.account_status){
+        if (data && data.account_status){
             // res.redirect("/bot/"+req.user.url_code);
-            res.redirect("/profileHome/"+req.user._id);
+            res.redirect("/profileHome/"+data._id);
         }
         else{
             res.redirect("/auth/google/profile?_id="+ req.user._id);
@@ -36,9 +39,11 @@ exports.googleplusAuth = (req, res) => {
 
 //LinkedIn Authentication API
 exports.linkedInAuth = (req, res) => {
+    req.session.token = req.user.accessToken;
+    req.session.hashid=req.user._id;
     userProfile.findOne({ 'email_id': req.user.email_id }).then((data)=>{
-        if (req.user.account_status){
-            res.send("Existing user");
+        if (data && data.account_status){
+            res.redirect("/profileHome/"+data._id);
         }
         else{
             res.redirect("/auth/linkedin/profile?_id=" + req.user._id);
@@ -50,9 +55,11 @@ exports.linkedInAuth = (req, res) => {
 
 //Facebook Authentication API
 exports.facebookAuth = (req, res) => {
+    req.session.token = req.user.accessToken;
+    req.session.hashid=req.user._id;
     userProfile.findOne({'email_id': req.user.email_id}).then((data)=>{
-        if (req.user.account_status){
-            res.send("Existing user");
+        if (data && data.account_status){
+            res.redirect("/profileHome/"+data._id);
         }
         else{
             res.redirect("/auth/facebook/profile?_id="+ req.user._id);
@@ -64,29 +71,24 @@ exports.facebookAuth = (req, res) => {
 
 //Profile page route API
 exports.profile = (req, res) => {
-    let parsedata={};
-    userProfile.findOne({"_id": req.query._id}).then((data)=>{
-        userRoles.findOne({"id":'Role'}).then((data)=>{
-            res.render("../view/getRole", {                         //profile
-                "data": data
+    if(req.session.token && req.session.hashid){
+        res.cookie('token', req.session.token);
+        res.cookie('hashid',req.session.hashid);
+        let parsedata={};
+        userProfile.findOne({"_id": req.query._id}).then((data)=>{
+            userRoles.findOne({"id":'Role'}).then((data)=>{
+                res.render("../view/getRole", {                         //profile
+                    "data": data,
+                    "userId":req.query._id
+                });
+            }).catch((err)=>{
+                res.status(404).redirect('/');
             });
-        });
-
-        // fresherQuestion.findOne({}).then((docs) => {
-        //     console.log(JSON.stringify(docs));
-        //     questions=[];
-        //     for (var key_val in docs.questions_Array[0]) {
-        //         questions = docs.questions_Array[0];
-        //     }
-        //     data['questions']=questions;
-        //     res.render("../view/getRole", {                         //profile
-        //         "data": data,
-        //         "questions" : questions
-        //     });
-        // }).catch((err)=>{
-        //     res.status(404).redirect('/');
-        // });
-    }).catch((err)=>{
-        res.status(404).redirect('/');
-    });    
+        }).catch((err)=>{
+            res.status(404).redirect('/');
+        });    
+    }else{
+        res.cookie('token', '')
+        res.redirect('/');       
+    }
 }

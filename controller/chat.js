@@ -1,6 +1,7 @@
-const userProfile = require('../models/user-model');
-const fresherDetail = require('../models/fresher-model');
-const userRoles = require('../models/user-roles');
+const database=require("../config/database");
+const userProfile =database.userprofiles_db;                // require('../models/user-model');
+const fresherDetail = database.fresherdetails_db;           // require('../models/fresher-model');
+const userRoles = database.roles_db;                        // require('../models/user-roles');
 
 const fresherProjectId = 'newagent-33ad4'; 
 var apiai = require('apiai');
@@ -24,14 +25,14 @@ exports.startChat = (req, res) => {
 }
 
 exports.chatIntent = (req, res) => {
-    console.log(req.query.q);
+    // console.log(req.query.q);
 
     var request = app.textRequest(req.query.q, {
         sessionId: fresherProjectId
     });
     
     request.on('response', function(response) {
-        console.log(response);
+        // console.log(response);
         res.send({ "intent" : response.result.metadata.intentName});
     });
     
@@ -45,7 +46,7 @@ exports.chatIntent = (req, res) => {
 }
 
 exports.chatResponse = (req,res) => {
-    console.log(req.query.user_id)
+    // console.log(req.query.user_id)
 
     fresherDetail.findOne({"user_id": req.query.user_id}, (err, data) => {
         if (!err) {

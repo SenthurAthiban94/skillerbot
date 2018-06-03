@@ -31,7 +31,7 @@ var addHrMsg = function(){
                 return;               
             }
             if(intent.intent){
-                console.log(intent.intent);
+                // console.log(intent.intent);
                 fetch("/findAnswer?q=" + intent.intent + "&user_id=" + userId,
                 {
                     method: 'GET'

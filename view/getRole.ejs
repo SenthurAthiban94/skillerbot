@@ -1,13 +1,19 @@
-<%- include header.ejs %>
-<%- include notifications.ejs %>
 <html>
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="/css/font-awesome/css/font-awesome.min.css">    
+        <link rel="stylesheet" type="text/css" href="/semantic/dist/semantic.min.css">
+        <link rel="stylesheet" href="/libs/bootstrap.min.css" />
+        <link rel="stylesheet" href="/libs/animate.min.css" />
         <link rel="stylesheet" href="/css/main.css" />
         <link href="https://fonts.googleapis.com/css?family=Oswald|Slabo+27px" rel="stylesheet">    
         <link rel="stylesheet" href="/css/getroles.css"/>
+        <link rel="stylesheet" href="/libs/font-awesome.min.css" />
+        <script src="/libs/js/jquery.min.js" type="text/javascript"></script>
+        <script type="text/javascript" src="/semantic/dist/semantic.min.js"></script>
     </head>
     <body>
+        <%- include header.ejs %>
         <div class="form-container">
             <h1 class="role">Please Select your Designation</h1>
             <ul class="role-list">
@@ -17,7 +23,7 @@
                         <input type="<%=data.type%>" name="<%=data.id%>" value="<%=data.options[i]['value']%>" <%= (i==0) ? 'checked' : 'disabled'%>  />
                         <%=data.options[i]["name"]%> 
                         <% if(i!=0) {%> 
-                        <span><i>Coming soon</i></span>
+                        (<span style="color:red;"><i>Coming soon</i></span>)
                         <% } %>
                         <span class='checkmark'></span>
                     </label>
@@ -31,7 +37,7 @@
         <script>
             function proceed(){
                 var selected_role=$('input[name="<%=data.id%>"]:checked').val();
-                alert(selected_role);
+                window.location.href="/profile/questions/<%=userId%>/"+selected_role;
             }
         </script>
     </body>

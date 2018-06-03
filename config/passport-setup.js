@@ -2,7 +2,8 @@ const passport = require("passport");
 const LinkedInStrategy = require("passport-linkedin-oauth2").Strategy;
 const GoogleStrategy = require("passport-google-oauth20");
 const keys = require("./keys");
-const userProfile = require('../models/user-model');
+const database=require("./database");
+const userProfile = database.userprofiles_db;       //require('../models/user-model');
 
 passport.serializeUser(
     function (user, done) {
@@ -30,7 +31,11 @@ passport.use(
         (accessToken, refreshToken, profile, done) => {
             userProfile.findOne({ email_id: profile.emails[0].value }).then((currentUser) => {
                 if (currentUser) {
-                    done(null, currentUser);
+                    currentUser.image_path=profile.photos[0].value;
+                    currentUser.save().then((updatedUser)=>{
+                        updatedUser.accessToken=accessToken;
+                        done(null, updatedUser);
+                    });
                 }
                 else {
                     new userProfile({
@@ -41,6 +46,7 @@ passport.use(
                         role : "undefined",
                         profile_url: profile._json.url
                     }).save().then((newUser) => {
+                        newUser.accessToken=accessToken;
                         done(null, newUser);
                     });
                 }
@@ -59,6 +65,7 @@ passport.use(
                 if (currentUser) {
                     currentUser.image_path=profile.photos[0].value;
                     currentUser.save().then((updatedUser)=>{
+                        updatedUser.accessToken=accessToken;
                         done(null, updatedUser);
                     });
                 }
@@ -71,6 +78,7 @@ passport.use(
                         role : "undefined",
                         profile_url: profile._json.url
                     }).save().then((newUser) => {
+                        newUser.accessToken=accessToken;
                         done(null, newUser);
                     });
                 }

@@ -1,39 +1,46 @@
-<link rel="stylesheet" type="text/css" href="/css/notifications.css"/>
-<div class="container">
-    <div class="notification static" id="static">
-        <h3 class="notification-title"></h3>
-        <p class="notification-message"></p>
+<div class="notificationloader overlay"></div>
+<div class="notificationloader overlay img-overlay">
+    <img src="/assets/img/loader.gif" class="notificationloader loader-gif" style="display:none;"/>
+</div>
+<div class="notificationloader container">
+    <div class="notificationloader notification static" id="static">
+        <h3 class="notificationloader notification-title"></h3>
+        <p class="notificationloader notification-message"></p>
     </div>
 
-    <div class="notification success" id="success">
-        <span class="notification-close">&times;</span>
-        <h3 class="notification-title"></h3>
-        <p class="notification-message"></p>
+    <div class="notificationloader notification success" id="success">
+        <span class="notificationloader notification-close">&times;</span>
+        <h3 class="notificationloader notification-title"></h3>
+        <p class="notificationloader notification-message"></p>
     </div>
     
-    <div class="notification warning" id="warning">
-        <span class="notification-close">&times;</span>
-        <h3 class="notification-title"></h3>
-        <p class="notification-message"></p>
+    <div class="notificationloader notification warning" id="warning">
+        <span class="notificationloader notification-close">&times;</span>
+        <h3 class="notificationloader notification-title"></h3>
+        <p class="notificationloader notification-message"></p>
     </div>
     
-    <div class="notification info" id="info">
-        <span class="notification-close">&times;</span>
-        <h3 class="notification-title"></h3>
-        <p class="notification-message"></p>
+    <div class="notificationloader notification info" id="info">
+        <span class="notificationloader notification-close">&times;</span>
+        <h3 class="notificationloader notification-title"></h3>
+        <p class="notificationloader notification-message"></p>
     </div>
     
-    <div class="notification danger" id="danger">
-        <span class="notification-close">&times;</span>
-        <h3 class="notification-title"></h3>
-        <p class="notification-message"></p>
+    <div class="notificationloader notification danger" id="danger">
+        <span class="notificationloader notification-close">&times;</span>
+        <h3 class="notificationloader notification-title"></h3>
+        <p class="notificationloader notification-message"></p>
     </div>
 </div>
 <script>
+    var link=document.createElement("link");
+        link.rel="stylesheet";
+        link.type="text/css";
+        link.href="/css/notifications.css";
+        document.querySelector('head').appendChild(link);
     var static_set=false;
     $('.notification-close').on('click', notificationClose);
     function notificationClose() {
-        $('.static').show();    
         $(this)
         .parent('.notification')
         .hide();
@@ -45,11 +52,13 @@
         if(static_set){
             $('.static').hide();
         }
+        $('.overlay').show();
         $('#'+type+' > .notification-title').text(title);
         $('#'+type+' > .notification-message').text(message);
         $('#'+type).show()
-        if(duration>0){
+        if(!static_set && duration>0){
             $('#'+type).delay(duration*1000).fadeOut(1000,function(){
+                $('.overlay').hide();
                 if(static_set){
                     $('.static').show();
                 }

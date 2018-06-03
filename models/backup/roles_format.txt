@@ -1,0 +1,19 @@
+{
+    "_id": {
+        "$oid": "5b09dbacfb6fc0292d6ef0a7"
+    },
+    "question": "Please Select Your Role",
+    "image_url": "https://download.unsplash.com/photo-1428279148693-1cf2163ed67d",
+    "type": "radio",
+    "id": "Role",
+    "options": [
+        {
+            "name": "Fresher",
+            "value": "fresher"
+        },
+        {
+            "name": "Experienced",
+            "value": "exp"
+        }
+    ]
+}

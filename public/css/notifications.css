@@ -1,4 +1,4 @@
- * .container {
+.notificationloader.container {
     position: absolute;
     z-index: 9999999999999;
     transform: translate(-50%, -50%);
@@ -6,7 +6,26 @@
     top: 120px;
     width: 400px;
   }
-  .notification {
+  .notificationloader.overlay{
+    display: none;
+    position: absolute;
+    z-index: 9999;
+    height: 100vh;
+    width: 100vw;
+    text-align: center;
+    background:#69676763;
+  }
+
+  .notificationloader.loader-gif{
+    height:200px;
+    width:200px;
+    display: none;
+  }
+  .notificationloader.img-overlay{
+    padding-top:20vh;
+  }
+
+  .notificationloader.notification {
     display: none;
     max-width: 400px;
     width: 100%;
@@ -17,7 +36,7 @@
     position: relative;
     text-align: center;
   }
-  .notification .notification-close {
+  .notificationloader.notification .notification-close {
     position: absolute;
     top: 10px;
     right: 10px;
@@ -29,45 +48,46 @@
     line-height: 19px;
     text-align: center;
   }
-  .notification .notification-title,
-  .notification .notification-message {
+  .notificationloader.notification .notification-title,
+  .notificationloader.notification .notification-message {
     color: #fff;
     font-family: 'Open Sans', sans-serif;
   }
-  .notification .notification-title {
+  .notificationloader.notification .notification-title {
+    margin-top:0px;
     font-size: 16px;
     font-weight: 600;
   }
-  .notification .notification-message {
+  .notificationloader.notification .notification-message {
     font-weight: 400;
     font-size: 14px;
   }
-  .static{
+  .notificationloader.static{
       text-align: center;
   }
-  .success {
+  .notificationloader.success {
     background: #5ed490;
   }
-  .success .notification-close {
+  .notificationloader.success .notification-close {
     border: 1px solid #2d794b;
     color: #2d794b;
   }
-  .danger {
+  .notificationloader.danger {
     background: #f56668;
   }
-  .danger .notification-close {
+  .notificationloader.danger .notification-close {
     border: 1px solid #ba4849;
     color: #ba4849;
   }
-  .info,.static {
+  .notificationloader.info,.headercss .static {
     background: #2a7ac0;
   }
-  .info .notification-close {
+  .notificationloader.info .notification-close {
     border: 1px solid #08345b;
   }
-  .warning {
+  .notificationloader.warning {
     background: #e5a300;
   }
-  .warning .notification-close {
+  .notificationloader.warning .notification-close {
     border: 1px solid #996d00;
   }  

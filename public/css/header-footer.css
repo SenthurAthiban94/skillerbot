@@ -1,16 +1,16 @@
-body{
-    padding-top:50px;
-    padding-bottom:50px;   
+.headercss body{
+    padding-top:50px !important;
+    padding-bottom:50px !important;   
 }
-.navbar {
-    z-index: 9999;
-    background-color: black;
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.7);
+.headercss.navbar {
+    z-index: 9999 !important;
+    background-color: black !important;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.7) !important;
 }
-.navbar-brand{
+.headercss.navbar-brand{
     margin-left: 0px !important;
 }
-#twoam {
+.headercss #twoam {
     width: 100vw;
     height: 100vh;
     background-image: url("http://2am.ninja/img/bruce_contact3.jpg");
@@ -21,22 +21,22 @@ body{
     background-color: rgb(28, 28, 28);
     color: white;
 }
-#nav-bar ul li:hover::after {
-    width: 100%;
+.headercss #nav-bar ul li:hover::after {
+    width: 100% !important;
 }
 
-#nav-bar ul li::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    height: 3px;
-    background: #607D8B;
-    width: 0;
-    transition: width 0.2s;
+.headercss #nav-bar ul li::after {
+    content: '' !important;
+    position: absolute !important;
+    left: 0 !important;
+    bottom: 0 !important;
+    height: 3px !important;
+    background: #607D8B !important;
+    width: 0 !important;
+    transition: width 0.2s !important;
 }
 
-#social-footer {
+.footercss #social-footer {
     width: 100%;
     text-align: center;
     color: white;
@@ -44,27 +44,27 @@ body{
     padding-bottom: 0px;
 }
 
-#social-footer ul {
+.footercss #social-footer ul {
     margin: 0;
     padding: 0;
     list-style-type: none;
 }
 
-#social-footer ul li {
+.footercss #social-footer ul li {
     display: inline;
     padding: 0.4em;
 }
 
-#social-footer a {
+.footercss #social-footer a {
     /*  color: #939393 !important; */
     color: white !important;
 }
 
-.blacktext {
+.footercss .blacktext {
     color: black;
 }
 
-footer {
+.footercss footer {
     width: 100vw;
     position: fixed;
     bottom: 0;
@@ -74,35 +74,36 @@ footer {
     background-color: #000;
     opacity: 1;
     z-index: 100;
-    a {
-        font-weight: 500;
-        text-decoration: none;
-    }
+}
+
+.footercss footer > a{
+    font-weight: 500;
+    text-decoration: none;
 }
 
 
-a.fa {
+.footercss a.fa {
     text-decoration: none
 }
 
-a:link {
+.footercss  a:link {
     text-decoration: none !important;
     outline: 0;
 }
 
-.fa-stack {
+.footercss  .fa-stack {
     margin: -2px;
 }
 
-.copyright {
+.footercss .copyright {
     padding-bottom: 0px;
     padding-top: 5px;
     color: #555;
 }
-.highlight {
+.footercss .highlight {
     opacity: 0.6;
 }
 
-.highlight:hover {
+.footercss  .highlight:hover {
     opacity: 1;
 }

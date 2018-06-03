@@ -72,13 +72,19 @@ a{
     min-height: 100vh;
     border-right: 1px solid rgba(0, 0, 0, 0.1);
 }
-
-
+.contact_for_bot > input{
+    height:40px;
+    color:black;
+}
+@media (min-width: 769px){
+    .customize-content{
+        margin-top:20%;
+    }
+}
 @media (max-width: 768px){
     .content{
         display: block;
     }
-
     .m-display-none{
         display: none;
     }
@@ -134,6 +140,25 @@ a{
     .social i{
         color: #fff;
     }
+    .social-btn{
+        width: 80%;
+    }
+    .inner-box{
+        margin: 25px;
+        margin-top: 100px;
+    }
+    .select-option{
+        width: 80%;
+        margin-left: 10%;
+    }
+    .questionnaireSection{
+        margin-left: 30px!important;
+        margin-right: 30px!important;
+    }
+    .userInputDetails{
+        width: 90%;
+        height: 40px;
+    }
 }
 .signup{
     padding-bottom: 50px;
@@ -144,11 +169,16 @@ a{
 }
 .signup-content{
     z-index: 99;
-    padding-top: 30%;
+    padding-top: 20%;
     padding-left: 50px;
     position: relative;
 }
-
+.signup-content a{
+    text-decoration: none;
+}
+.signup-content a:hover{
+    text-decoration: none;
+}
 .description{
     padding-bottom: 50px;
 }
@@ -162,7 +192,7 @@ a{
 }
 .desc-content{
     z-index: 99;
-    padding-top: 30%;
+    padding-top: 20%;
     padding-left: 50px;
     position: relative;
 }
@@ -172,8 +202,9 @@ a{
 }
 .customize-content{
     z-index: 99;
-    padding-top: 30%;
-    padding-left: 50px;
+    padding-top: 20%;
+    margin-left: 50px;
+    padding:10px;
     position: relative;
     overflow: hidden;
 }
@@ -198,6 +229,7 @@ a{
 }
 .font-wt-400{
     font-weight: 400;
+    line-height: inherit;
 }
 .font-24{
     font-size: 24px;
@@ -513,11 +545,6 @@ a{
     cursor: pointer;
 }
 
-@media (max-width: 768px){
-    .social-btn{
-        width: 80%;
-    }
-}
 
 .social-btn:focus {
     outline: none!important;
@@ -680,17 +707,6 @@ cursor:pointer;
     padding-left: 12px;
 }
 
-@media (max-width: 768px){
-    .questionnaireSection{
-        margin-left: 30px!important;
-        margin-right: 30px!important;
-    }
-    .userInputDetails{
-        width: 90%;
-        height: 40px;
-    }
-}
-
 .questionnaireSubmit{
     width: 135px;
     height: 36px;
@@ -728,17 +744,6 @@ cursor:pointer;
 
 .questionnaireSubmit:hover{
 cursor:pointer;
-}
-
-@media (max-width: 768px){
-    .inner-box{
-        margin: 25px;
-        margin-top: 100px;
-    }
-    .select-option{
-        width: 80%;
-        margin-left: 10%;
-    }
 }
 
 .qbutton{
