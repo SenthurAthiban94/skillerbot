@@ -80,8 +80,10 @@ $(document).ready(function(){
     });
     
     $height = $(document).height();
-    $('.set-full-height').css('height',$height);
-    
+    $('.set-full-height').css('min-height','100vh');
+    $('.set-full-height').css('padding-bottom','100px');
+    $('.set-full-height').css('background-attachment','fixed');
+    // $('.set-full-height').css('height',$height);
     
 });
 
