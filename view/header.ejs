@@ -91,21 +91,36 @@
 
                 function share(){
                     var twitterShare = document.querySelector('.tw-share');
+                    var twitterBotShare = document.querySelector('.tw-shareBot');
                     var facebookShare = document.querySelector('.fb-share');
+                    var facebookBotShare = document.querySelector('.fb-shareBot');
                         if(twitterShare && facebookShare){
                             twitterShare.onclick = function(e) {
                                 e.preventDefault();
-                                var twitterWindow = window.open('https://twitter.com/share?url=' + document.URL, 'twitter-popup', 'height=350,width=600');
+                                var twitterWindow = window.open('https://twitter.com/share?url=' +document.URL, 'twitter-popup', 'height=350,width=600');
                                 if(twitterWindow.focus) { twitterWindow.focus(); }
                                     return false;
                             }
                             facebookShare.onclick = function(e) {
                                 e.preventDefault();
+                                var facebookWindow = window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent('https://skillerbot.herokuapp.com/')+'&amp;src=sdkpreparse','facebook-share-dialog','width=626,height=436');
+                                if(facebookWindow.focus) { facebookWindow.focus(); }
+                                    return false;
+                            }
+                        }
+                        if(twitterBotShare && facebookBotShare){
+                            twitterBotShare.onclick = function(e) {
+                                e.preventDefault();
+                                var twitterWindow = window.open('https://twitter.com/share?url=' +encodeURIComponent(e.target.href), 'twitter-popup', 'height=350,width=600');
+                                if(twitterWindow.focus) { twitterWindow.focus(); }
+                                    return false;
+                            }
+                            facebookBotShare.onclick = function(e) {
+                                e.preventDefault();
                                 var facebookWindow = window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(e.target.href)+'&amp;src=sdkpreparse','facebook-share-dialog','width=626,height=436');
                                 if(facebookWindow.focus) { facebookWindow.focus(); }
                                     return false;
                             }
-
                         }
                 }
                 $(document).ready(function(){
