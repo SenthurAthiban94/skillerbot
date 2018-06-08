@@ -1,6 +1,6 @@
 const database=require("../config/database");
 const userProfile =database.userprofiles_db;                // require('../models/user-model');
-const fresherDetail = database.fresherdetails_db;           // require('../models/fresher-model');
+const fresherDetail = database.fresher_details_db;           // require('../models/fresher-model');
 const userRoles = database.roles_db;                        // require('../models/user-roles');
 
 const fresherProjectId = 'newagent-33ad4'; 

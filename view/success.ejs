@@ -1,44 +1,31 @@
-<!DOCTYPE html>
 <html>
 
 <head>
-    <meta name="viewport" content="width=device-width">
-
-    <title>SkillerBot | Success</title>
-    <!-- CSS -->
-    <link rel="stylesheet" href="/css/style.css" />
-    <link rel="stylesheet" href="/libs/animate.css" />
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" /> -->
-    <link rel="stylesheet" href="/css/font-awesome/css/font-awesome.min.css">
-
-    <!-- JS -->
-    <script src="/js/main.js" type="text/javascript"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="/css/questions/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://netdna.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Oswald|Slabo+27px" rel="stylesheet"> 
+    <link href="/css/success.css" rel="stylesheet" /> 
+    <script src="/libs/js/jquery.min.js" type="text/javascript"></script>
 </head>
-
-<body class="profile-body">
+<body>
     <%- include header.ejs %>
-    <section style="margin-top:150px;">
-        <h3 style="text-align:center">Please Make a note of your Resume/CV Bot URL!,</h3>
-        <h1 class="profile-name">
-            <img src="/assets/img/success.gif" style="height:100px; width:100px;" />
-        </h1>
-        <h1 class="profile-name font-25">
-            <i class="fa fa-android"></i>  <a href="/bot/<%=url %>" target="_blank"> https://skillerbot.com/bot/<%=url %></a>
-        </h1>
-        <a href="/bot/<%=url %>" target="_blank">
-            <div class="align-center">
-                <button type="submit" style="left: calc(50% - 130px);" class="qbutton">PROCEED TO BOT
-                    <i class="fa fa-chevron-right"></i>
-                </button>
+    <div class="success-page container">
+        <div class="success-page overlay">
+            <div class="success-page msg">
+                <h1 class="success-page heading1">Congratulations!</h1>
+                <h1 class="success-page heading2">You have brought your BOT to life </h1>
+                <!-- <h2 class="link-msg">You may Access or Share your BOT through the following unique Link -  -->
+                <!-- </h2> -->
+                <a href="/bot/<%=url%>" target="_blank">
+                    <button type="submit" class="success-page btn-proceed btn-proceed-bot"> Talk to your BOT </button>
+                </a>
+                <a href="/profileHome/<%=userid%>">
+                    <button type="submit" class="success-page btn-proceed"> Go to Profile </button>
+                </a>
             </div>
-        </a>
-    </section>
-
-    <script>
-        showNotification("static","Congratulation!","Your Bot is Live  Now",0);
-    </script>
-
+        </div>
+    </div>
     <%- include footer.ejs %>
 </body>
-
 </html>

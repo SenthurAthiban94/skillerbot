@@ -6,10 +6,10 @@ const profile = require("../controller/profile");
 const chat = require("../controller/chat");
 const passport = require("passport");
 const database=require('../config/database');
-const userProfile =database.userprofiles_db;                    // require('../models/user-model');
-const fresherQuestion = database.fresher_questions_db;          // require('../models/fresher-Questions');
-const fresherProfile = database.fresherdetails_db;              // require('../models/fresher-model');
-const userRoles=database.roles_db;                              // require('../models/user-roles');
+// const userProfile =database.userprofiles_db;                    // require('../models/user-model');
+// const fresherQuestion = database.fresher_questions_db;          // require('../models/fresher-Questions');
+// const fresherProfile = database.fresher_details_db;              // require('../models/fresher-model');
+// const userRoles=database.roles_db;                              // require('../models/user-roles');
 const sendMail=require('../config/nodemailer');
 
 
@@ -17,23 +17,16 @@ route.get('/', (req, res) => {
     if(!req.session.token || !req.session.hashid){
         res.render("../view/index");
     }else{
-        res.redirect('/auth/google/profile/?_id='+req.session.hashid);
+        res.redirect('/profileHome/'+req.session.hashid);
     }
 });
 
-route.get('/view/success', (req, res) => {
-    if(req.query.uid && req.query.url){
-        res.render("../view/success",{
-            url: req.query.url,
-            userid: req.query.id
-        });
-    }else{
-        res.render("../view/signup");
-    }
-});
 
+route.post('/profile/answers',profile.answers);
 route.get('/profile/questions/:profileId/:role',profile.questions);
 route.get('/profileHome/:profileId',profile.home);
+route.get('/profile/editanswers',profile.editanswers);
+route.get('/view/success',profile.success);
 
 // Chat Page
 route.get('/bot/:code', chat.startChat);
@@ -93,7 +86,6 @@ route.post('/sendmail',(req,res)=>{
         res.json({status:0,msg:"Invalid Number of Parameters"});
     }
 });
-
 //Get Questions
 // route.post('/profile/getQuestions', (req, res) => {
 //     var questions = [],userResponse=[],userid,intentCollection,submitted_status,responseObject = {};

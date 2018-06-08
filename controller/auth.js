@@ -25,7 +25,6 @@ exports.googleplusAuth = (req, res) => {
     req.session.hashid=req.user._id;
     userProfile.findOne({'email_id': req.user.email_id}).then((data)=>{
         if (data && data.account_status){
-            // res.redirect("/bot/"+req.user.url_code);
             res.redirect("/profileHome/"+data._id);
         }
         else{
@@ -82,13 +81,13 @@ exports.profile = (req, res) => {
                     "userId":req.query._id
                 });
             }).catch((err)=>{
-                res.status(404).redirect('/');
+                res.status(404).redirect('/logout');
             });
         }).catch((err)=>{
-            res.status(404).redirect('/');
+            res.status(404).redirect('/logout');
         });    
     }else{
         res.cookie('token', '')
-        res.redirect('/');       
+        res.redirect('/logout');       
     }
 }

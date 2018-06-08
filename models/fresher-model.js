@@ -6,7 +6,7 @@ var fresherDetailsSchema = new Schema(
         user_id : {
             type: String
         },
-        questions_Array : {
+        user_details : {
             type:Array
         }
     });
