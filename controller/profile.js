@@ -6,7 +6,11 @@ exports.home = (req, res) => {
         if(req.params.profileId){
             database.userprofiles_db.findOne({ '_id': req.params.profileId }, (err, data) => {
                 if (!err) {
-                    res.render("../view/profileHome", { "data": data });
+                    if(data.role && data.role!=='undefined'){
+                        res.render("../view/profileHome", { "data": data });
+                    }else{
+                        res.redirect("/auth/google/profile?_id="+ data._id);
+                    }
                 } else {
                     res.status(404).redirect('/auth/google');
                 }
