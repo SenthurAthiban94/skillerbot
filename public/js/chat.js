@@ -1,9 +1,9 @@
 var addHrMsg = function(){
-    var msg = document.getElementById("msgarea");
-    var input = document.getElementById("input");
-    var userId = document.getElementById("user-id").innerHTML;
-    var image = document.getElementById("image").innerHTML;
-    var typing = document.getElementById("typing");
+    var msg = document.getElementById("msgarea"),
+        input = document.getElementById("input"),
+        userId = document.getElementById("user-id").innerHTML,
+        image = document.getElementById("image").innerHTML,
+        typing = document.getElementById("typing");
 
     if(input.value.length > 0 && input.value.trim() != ""){
         var div = document.createElement("div");

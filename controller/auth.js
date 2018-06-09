@@ -1,8 +1,8 @@
-const passport = require("passport");
-const database=require("../config/database");
-const userProfile = database.userprofiles_db;                   //require('../models/user-model');
-const fresherQuestion = database.fresher_questions_db;          //require('../models/fresher-Questions');
-const userRoles = database.roles_db;                            //require('../models/user-roles');
+const passport = require("passport"),
+    database=require("../config/database"),
+    userProfile = database.userprofiles_db,                   //require('../models/user-model');
+    fresherQuestion = database.fresher_questions_db,          //require('../models/fresher-Questions');
+    userRoles = database.roles_db;                            //require('../models/user-roles');
 
 //Scope page for google +
 exports.googleplusScope = passport.authenticate('google',{

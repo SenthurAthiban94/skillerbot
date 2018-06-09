@@ -17,6 +17,7 @@
             <img class="dp" src="<%=data.image_path%>" alt="Display Picture" />
             <h2 class="name"><%= data.user_name%></h2>
             <h3 class="title"><%= (data.role).toUpperCase();%></h3>
+            <% if(typeof(data.url_code) !== 'undefined'){%>
             <h2 class="name">Resume Bot Link</h2>
             <h2 class="name">
                 <a href="./../bot/<%=data.url_code%>" target="_blank">https://skillerbot.herokuapp.com/bot/<%=data.url_code%></a>
@@ -52,6 +53,13 @@
                     </a> -->
                 </div>
             </div>
+            <%}else{%>
+                <div class="text-center">
+                    <a href="/profile/editanswers">
+                        <button type="button" class="btn-proceed"> Build Your Profile </button>
+                    </a>
+                </div>
+            <%}%>
         </div>
     </body>
 </html>

@@ -50,7 +50,7 @@ exports.chatResponse = (req,res) => {
 
     fresherDetail.findOne({"user_id": req.query.user_id}, (err, data) => {
         if (!err) {
-            res.send({ "answer" : data.questions_Array[0][req.query.q] });
+            res.send({ "answer" : data.user_details[0][req.query.q] });
         } else {
             res.send("err");
         }

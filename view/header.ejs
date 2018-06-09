@@ -63,6 +63,10 @@
                     delete_cookie('token');
                     delete_cookie('hashid');
                     window.location.href='/logout';
+                // var logoutloading=document.createElement('iframe');
+                //     logoutloading.src="https://www.linkedin.com/m/logout/";
+                //     logoutloading.style="display:none;";
+                //     document.getElementsByTagName('body')[0].appendChild(logoutloading);
                 }
         
                 function getCookie(cname) {
@@ -97,7 +101,7 @@
                         if(twitterShare && facebookShare){
                             twitterShare.onclick = function(e) {
                                 e.preventDefault();
-                                var twitterWindow = window.open('https://twitter.com/share?url=' +document.URL, 'twitter-popup', 'height=350,width=600');
+                                var twitterWindow = window.open('https://twitter.com/share?url=' +encodeURIComponent('https://skillerbot.herokuapp.com/'), 'twitter-popup', 'height=350,width=600');
                                 if(twitterWindow.focus) { twitterWindow.focus(); }
                                     return false;
                             }

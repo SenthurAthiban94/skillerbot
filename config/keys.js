@@ -12,7 +12,7 @@ module.exports = {
         clientSecret:'ASIKiRTjswAv__xuHTmbsYqb'
     },
     linkedIn:{
-        clientID:'81osj02dqytkh8',
-        clientSecret:'hacOR7vNUJxB12j5'
+        clientID:'81u7c7fny6u3x4',
+        clientSecret:'RGsu1uBHQ1eoxyzd'
     }
 }

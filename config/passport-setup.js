@@ -1,9 +1,9 @@
-const passport = require("passport");
-const LinkedInStrategy = require("passport-linkedin-oauth2").Strategy;
-const GoogleStrategy = require("passport-google-oauth20");
-const keys = require("./keys");
-const database=require("./database");
-const userProfile = database.userprofiles_db;       //require('../models/user-model');
+const passport = require("passport"),
+        LinkedInStrategy = require("passport-linkedin-oauth2").Strategy,
+        GoogleStrategy = require("passport-google-oauth20"),
+        keys = require("./keys"),
+        database=require("./database"),
+        userProfile = database.userprofiles_db;       //require('../models/user-model');
 
 passport.serializeUser(
     function (user, done) {
@@ -24,6 +24,7 @@ passport.deserializeUser(
 passport.use(
     new LinkedInStrategy({
         callbackURL: '/auth/linkedin/redirect',
+        failureRedirect: '/',
         clientID: keys.linkedIn.clientID,
         clientSecret: keys.linkedIn.clientSecret,
         scope: ['r_basicprofile', 'r_emailaddress']

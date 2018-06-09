@@ -58,16 +58,17 @@
     <script src="/libs/js/jquery.min.js" type="text/javascript"></script>
     <script>
         let domstructure=[];
-        let questions=<%-JSON.stringify(questions)%>;
+        let questions=<%- typeof questions !== 'undefined' ? JSON.stringify(questions) : {}%>;
         let existing_answers=<%-typeof previousdata !== 'undefined' ? JSON.stringify(previousdata) : "''" %>;
         let section_maxlimit=Math.ceil(Object.keys(questions).length/3);
         let answers={},sectionlist={},counter=0;
-        
-        Object.keys(questions).map((e,v)=>{
+        var totalquestions = Object.keys(questions);
+        var lastKey = totalquestions.slice(-1)[0];
+        totalquestions.map((e,v)=>{
             counter++;
             if(counter<=section_maxlimit){
                     sectionlist[e]=questions[e];
-                    if(counter==section_maxlimit || counter==Object.keys(questions).length){
+                    if(counter==section_maxlimit || counter==Object.keys(questions).length || e==lastKey){
                         domstructure.push(sectionlist);
                         counter=0;
                         sectionlist={};
@@ -261,26 +262,26 @@
                                     <div class='form-group'>\
                                         <label>"+e[ie]["q"]+" <small>(required)</small></label>\
                                         <select class='form-control' id='"+ie+"' name='"+e[ie]['name']+"' required >\
-                                            <option value='0'>Select -- "+e[ie]['name']+"</option>\
-                                            "+options+"</select>\
+                                        <option value='0'>Select</option>\
+                                        "+options+"</select>\
                                     </div>\
                                 </div>";
                         break;
                     case "multiselect":
                         rulelist[ie]=rules;
                         var options="";
-                            for(key in e[ie]['options']){
-                                options+="<option "+((existing_answers && existing_answers[0][ie] && existing_answers[0][ie].includes(e[ie]['options'][key]['value'])) ? "selected" : "")+" value='"+e[ie]['options'][key]['value']+"'>"+e[ie]['options'][key]['name']+"</option>";
-                            }
-                            input+='<div class="col-sm-10 col-sm-offset-1">\
-                                        <div class="form-group multiselect-container">\
-                                            <label>'+e[ie]["q"]+' <small>(required)</small></label>\
-                                            <select id="'+ie+'" onchange="multiselectchange(this.id,this.name)" name="'+e[ie]['name']+'" class="ui fluid search dropdown multiselect" multiple="" required >\
-                                                <option value="">'+e[ie]['name']+'</option>\
-                                                '+options+'\
-                                            </select>\
-                                        </div>\
-                                    </div>';
+                        for(key in e[ie]['options']){
+                            options+="<option "+((existing_answers && existing_answers[0][ie] && existing_answers[0][ie].includes(e[ie]['options'][key]['value'])) ? "selected" : "")+" value='"+e[ie]['options'][key]['value']+"'>"+e[ie]['options'][key]['name']+"</option>";
+                        }
+                        input+='<div class="col-sm-10 col-sm-offset-1">\
+                                    <div class="form-group multiselect-container">\
+                                        <label>'+e[ie]["q"]+' <small>(required)</small></label>\
+                                        <select id="'+ie+'" onchange="multiselectchange(this.id,this.name)" name="'+e[ie]['name']+'" class="ui fluid search dropdown multiselect" multiple="" required >\
+                                            <option value="">'+e[ie]['name']+'</option>\
+                                            '+options+'\
+                                        </select>\
+                                    </div>\
+                                </div>';
                         break;
                 }
             });
