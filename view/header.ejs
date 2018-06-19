@@ -101,13 +101,13 @@
                         if(twitterShare && facebookShare){
                             twitterShare.onclick = function(e) {
                                 e.preventDefault();
-                                var twitterWindow = window.open('https://twitter.com/share?url=' +encodeURIComponent('https://skillerbot.herokuapp.com/'), 'twitter-popup', 'height=350,width=600');
+                                var twitterWindow = window.open('https://twitter.com/share?url=' +encodeURIComponent('http://chatresume.com/'), 'twitter-popup', 'height=350,width=600');
                                 if(twitterWindow.focus) { twitterWindow.focus(); }
                                     return false;
                             }
                             facebookShare.onclick = function(e) {
                                 e.preventDefault();
-                                var facebookWindow = window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent('https://skillerbot.herokuapp.com/')+'&amp;src=sdkpreparse','facebook-share-dialog','width=626,height=436');
+                                var facebookWindow = window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent('http://chatresume.com/')+'&amp;src=sdkpreparse','facebook-share-dialog','width=626,height=436');
                                 if(facebookWindow.focus) { facebookWindow.focus(); }
                                     return false;
                             }

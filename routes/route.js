@@ -5,7 +5,7 @@ const route = express.Router(),
       profile = require("../controller/profile"),
       chat = require("../controller/chat"),
       passport = require("passport"),
-      database=require('../config/database'),
+      bot=require("../controller/bot"),
       sendMail=require('../config/nodemailer');
 
 
@@ -82,5 +82,10 @@ route.post('/sendmail',(req,res)=>{
         res.json({status:0,msg:"Invalid Number of Parameters"});
     }
 });
+
+
+// BOT WEBHOOK
+route.post('/botlink', bot.getRequest);
+
 
 module.exports = route;
